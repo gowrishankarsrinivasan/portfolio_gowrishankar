@@ -1,0 +1,153 @@
+/* src/components/Home.css */
+
+.home {
+  display: flex;
+  justify-content: flex-start;
+  color: orangered;
+  align-items: center;
+  height: 90vh;
+  background-color: #0a192f;
+  /* padding: 0 2rem; */
+  text-align: center;
+}
+
+
+.intro {
+  width: 50%;
+  opacity: 0;
+  transform: translatex(-20px);
+  animation: fadeSlideIn 2s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translatex(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+.intro {
+  margin-left: 100px;
+  text-align: left;
+  max-width: 1000px;
+}
+
+.intro-text {
+  font-size: 1.5rem;
+  color: #64ffda;
+}
+
+
+
+.description {
+  font-size: 3rem;
+  color: white;
+  margin: 0.5rem 0;
+}
+
+/* home.css */
+
+.details {
+  font-size: 1.25rem;
+  color: #64ffda; /* Turquoise color */
+  margin: 1.5rem 0; /* Top and bottom margin */
+  /* text-align: center; Center align text */
+  line-height: 1.6; /* Adjust line height for readability */
+
+    word-spacing: 5px; /* Adjust spacing between words */
+  
+  
+}
+
+.details::before {
+  content: "";
+  display: block;
+  width: 60px; /* Width of the line */
+  height: 3px; /* Height of the line */
+  background-color: #64ffda; /* Match the text color */
+  margin: 10px auto; /* Center the line horizontally */
+}
+
+
+.details a {
+  color: #64ffda;
+  text-decoration: none;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+.cta-button {
+  background-color: transparent;
+  border: 1px solid #64ffda;
+  border-radius: 5px;
+  color: #64ffda;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+/* home.css */
+
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.social-link {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 24px;
+  /* color: #ffffff; */
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 40px;
+  background-color: #ffffff;
+  color: black;
+}
+
+.social-link:hover .social-icon {
+  color: #007bff;
+  /* Change icon color on hover */
+}
+
+.social-icon {
+  transition: color 0.3s ease;
+}
+
+
+
+.my-img{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-img img{
+  height: 90%;
+  width: 90%;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.my-img img:hover{
+  transform: scale(1.08)
+}

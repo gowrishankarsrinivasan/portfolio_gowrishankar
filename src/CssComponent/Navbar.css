@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+
+.navbar {
+    /* background: #333; */
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #0a192f;
+    position: sticky;
+    top: 0;
+
+    z-index: 2;
+    
+}
+
+.navbar-logo {
+    color: #ccd6f6;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 60px;
+}
+
+.navbar-item {
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 18px;
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+.navbar-item:hover {
+    color: #ddd;
+}
+
+.button {
+    background-color: #64ffda;
+    /* Green background */
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* White text */
+    padding: 15px 32px;
+    /* Some padding */
+    text-align: center;
+    /* Center text */
+    text-decoration: none;
+    /* Remove underline */
+    display: inline-block;
+    /* Get it to display like a button */
+    font-size: 16px;
+    /* Increase font size */
+    margin: 4px 2px;
+    /* Add some margin */
+    cursor: pointer;
+    /* Add a pointer cursor on hover */
+    transition-duration: 0.4s;
+    /* Add transition effect */
+}
+
+.button:hover {
+    background-color: white;
+    /* White background on hover */
+    color: #64ffda;
+    /* Black text on hover */
+    border: 2px solid #4CAF50;
+    /* Add a green border on hover */
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #333;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-item {
+        padding: 10px 0;
+    }
+}
