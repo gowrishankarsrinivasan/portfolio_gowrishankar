@@ -4,11 +4,14 @@
   align-items: center;
   height: 70vh;
   width: 100%;
-  background-color: #0a192f;
+  background-color: black;
   color: #fff;
 }
+.project-container{
+  background-color: black;
+}
 .project-container h1{
-  background-color: #0a192f;
+  /* background-color: #0a192f; */
   font-size: 2.5rem; /* Adjust size as needed */
   font-weight: bold;
   color:#64ffda; /* Dark color for text */

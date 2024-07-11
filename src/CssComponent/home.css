@@ -1,87 +1,73 @@
-/* src/components/Home.css */
-
 .home {
   display: flex;
   justify-content: flex-start;
   color: orangered;
   align-items: center;
-  height: 90vh;
-  background-color: #0a192f;
-  /* padding: 0 2rem; */
+  min-height: 90vh;  /* Use min-height instead of height */
   text-align: center;
+  background: black;
+  overflow: hidden;
 }
 
-
-.intro {
+.home .intro {
   width: 50%;
   opacity: 0;
-  transform: translatex(-20px);
+  transform: translateX(-20px);
   animation: fadeSlideIn 2s ease forwards;
-}
-
-@keyframes fadeSlideIn {
-  0% {
-    opacity: 0;
-    transform: translatex(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translatex(0);
-  }
-}
-.intro {
   margin-left: 100px;
   text-align: left;
   max-width: 1000px;
 }
 
-.intro-text {
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.home .intro-text {
   font-size: 1.5rem;
   color: #64ffda;
 }
 
-
-
-.description {
+.home .description {
   font-size: 3rem;
   color: white;
   margin: 0.5rem 0;
 }
 
-/* home.css */
-
-.details {
+.home .details {
   font-size: 1.25rem;
-  color: #64ffda; /* Turquoise color */
-  margin: 1.5rem 0; /* Top and bottom margin */
-  /* text-align: center; Center align text */
-  line-height: 1.6; /* Adjust line height for readability */
-
-    word-spacing: 5px; /* Adjust spacing between words */
-  
-  
+  color: #64ffda;
+  margin: 1.5rem 0;
+  line-height: 1.6;
+  word-spacing: 5px;
 }
 
-.details::before {
+.home .details::before {
   content: "";
   display: block;
-  width: 60px; /* Width of the line */
-  height: 3px; /* Height of the line */
-  background-color: #64ffda; /* Match the text color */
-  margin: 10px auto; /* Center the line horizontally */
+  width: 60px;
+  height: 3px;
+  background-color: #64ffda;
+  margin: 10px auto;
 }
 
-
-.details a {
+.home .details a {
   color: #64ffda;
   text-decoration: none;
 }
 
-.details a:hover {
+.home .details a:hover {
   text-decoration: underline;
 }
 
-.cta-button {
+.home .cta-button {
   background-color: transparent;
   border: 1px solid #64ffda;
   border-radius: 5px;
@@ -92,26 +78,23 @@
   transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
+.home .cta-button:hover {
   background-color: rgba(100, 255, 218, 0.1);
 }
 
-/* home.css */
-
-.social-links {
+.home .social-links {
   display: flex;
   justify-content: flex-start;
   margin-top: 20px;
 }
 
-.social-link {
+.home .social-link {
   display: inline-block;
   margin: 0 10px;
   font-size: 24px;
-  /* color: #ffffff; */
 }
 
-.social-links a {
+.home .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,18 +105,15 @@
   color: black;
 }
 
-.social-link:hover .social-icon {
+.home .social-link:hover .social-icon {
   color: #007bff;
-  /* Change icon color on hover */
 }
 
-.social-icon {
+.home .social-icon {
   transition: color 0.3s ease;
 }
 
-
-
-.my-img{
+.home .my-img {
   width: 50%;
   height: 100%;
   display: flex;
@@ -141,13 +121,126 @@
   justify-content: center;
 }
 
-.my-img img{
+.home .my-img img {
   height: 90%;
   width: 90%;
   transition: transform 0.3s ease-in-out;
 }
 
+.home .my-img img:hover {
+  transform: scale(1.08);
+}
 
-.my-img img:hover{
-  transform: scale(1.08)
+.home .stars {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-45deg);
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+
+@keyframes tail-fade {
+  0%, 50% {
+    width: var(--star-tail-length);
+    opacity: 1;
+  }
+  70%, 80% {
+    width: 0;
+    opacity: 0.4;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+/* Custom properties for star animation */
+:root {
+  --star-color: white; /* Star color to white */
+  --star-tail-length: 10em; /* Increase tail length */
+  --star-tail-height: 4px; /* Increase tail height */
+  --star-width: calc(var(--star-tail-length) / 4); /* Adjust star width accordingly */
+  --fall-duration: 9s;
+  --tail-fade-duration: var(--fall-duration);
+}
+
+.home .star {
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--star-tail-length);
+  height: var(--star-tail-height);
+  color: var(--star-color);
+  background: linear-gradient(45deg, white, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px white);
+  transform: translate3d(104em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+}
+
+.home .star::before,
+.home .star::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: calc(var(--star-width) / -2);
+  width: var(--star-width);
+  height: 100%;
+  background: linear-gradient(45deg, transparent, white, transparent);
+  border-radius: inherit;
+  animation: blink 2s linear infinite;
+}
+
+.home .star::before {
+  transform: rotate(45deg);
+}
+
+.home .star::after {
+  transform: rotate(-45deg);
+}
+
+.home {
+  --star-color: var(--primary-color);
+  --star-tail-length: 6em;
+  --star-tail-height: 2px;
+  --star-width: calc(var(--star-tail-length) / 6);
+  --fall-duration: 9s;
+  --tail-fade-duration: var(--fall-duration);
+}
+
+.home .stars .star:nth-child(1) {
+  --star-tail-length: 8.25em;
+  --top-offset: 15vh;
+  --fall-duration: 4.75s;
+  --fall-delay: 0.5s;
+}
+
+.home .stars .star:nth-child(2) {
+  --star-tail-length: 9em;
+  --top-offset: 25vh;
+  --fall-duration: 4s;
+  --fall-delay: 2s;
+}
+
+.home .stars .star:nth-child(3) {
+  --star-tail-length: 6.75em;
+  --top-offset: 35vh;
+  --fall-duration: 5s;
+  --fall-delay: 1.5s;
+}
+
+.home .stars .star:nth-child(4) {
+  --star-tail-length: 7.25em;
+  --top-offset: 45vh;
+  --fall-duration: 5.5s;
+  --fall-delay: 3s;
 }

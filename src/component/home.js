@@ -1,9 +1,9 @@
-// src/components/Home.js
 import React from "react";
 import "../CssComponent/home.css";
 import Typewriter from "typewriter-effect";
 import { FaGithub, FaLinkedin, FaCode } from "react-icons/fa";
 import img from "../Images/myImg1.png";
+
 const Home = () => {
   return (
     <div className="home">
@@ -51,7 +51,11 @@ const Home = () => {
           </a>
         </div>
       </div>
-      <div className="my-img"><img src={img}></img></div>
+      <div className="stars">
+        {Array.from({ length: 50 }).map((_, i) => (
+          <div className="star" key={i}></div>
+        ))}
+      </div>
     </div>
   );
 };

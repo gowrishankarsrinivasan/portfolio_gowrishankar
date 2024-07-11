@@ -7,13 +7,15 @@ import About from "./component/about";
 import Projects from "./component/projects";
 import Footer from "./component/footer";
 import Tools from "./component/tools";
+import Starfield from "./component/Starfield";
+
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Home />
-      <Projects />
       <About />
+      <Projects />
       <Skills />
       <Tools />
       <Contact />
