@@ -2,15 +2,15 @@ import React from "react";
 import "../CssComponent/home.css";
 import Typewriter from "typewriter-effect";
 import { FaGithub, FaLinkedin, FaCode } from "react-icons/fa";
-import img from "../Images/myImg1.png";
 
-const Home = () => {
+const Home = React.forwardRef((props, ref) => {
   return (
-    <div className="home">
+    <div className="home" ref={ref}>
       <div className="intro">
         <p className="intro-text">Hello, I'm</p>
         <div className="typewriter-container">
-          <Typewriter className="ddd"
+          <Typewriter
+            className="ddd"
             options={{
               strings: ["Gowri Shankar", "Welcomes You"],
               autoStart: true,
@@ -25,7 +25,7 @@ const Home = () => {
           building accessible, human-centered products on my website.
         </p>
         <div className="social-links">
-          <a 
+          <a
             href="https://github.com/gowrishankarsrinivasan"
             target="_blank"
             rel="noopener noreferrer"
@@ -58,6 +58,6 @@ const Home = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Home;

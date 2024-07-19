@@ -49,7 +49,7 @@ const Tools = () => {
   return (
     <div className="tools-container">
       <h1>Tools</h1>
-      <div className="tools-grid">
+      <div className="tools-grid"  data-aos="flip-up">
         {tools.map((item, index) => (
           <div key={index} className="tool-item">
             <img src={item.img} alt={item.alt} />

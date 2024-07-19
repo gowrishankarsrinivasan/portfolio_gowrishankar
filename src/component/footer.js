@@ -1,9 +1,9 @@
 import React from "react";
 import "../CssComponent/Foter.css";
 
-const Footer = () => {
+const Footer = React.forwardRef((props, ref) => {
   return (
-    <footer className="footer">
+    <footer className="footer" ref={ref}>
       <div className="footer-content">
         <h3>gowrishankarsrinivasan2004</h3>
         <nav className="footer-nav">
@@ -40,6 +40,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
 
 export default Footer;

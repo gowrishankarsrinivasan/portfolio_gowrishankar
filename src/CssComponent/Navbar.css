@@ -9,12 +9,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color:black;
+    background-color: #0a192f;
     position: sticky;
     top: 0;
 
     z-index: 2;
-    
+
 }
 
 .navbar-logo {
@@ -29,10 +29,21 @@
 }
 
 .navbar-item {
-    color: #64ffda;
-    text-decoration: none;
-    font-size: 18px;
-    /* font-family: 'Roboto', sans-serif; */
+    cursor: pointer;
+    /* Changes cursor to pointer */
+    /* Optional styling to make it look like a button */
+    padding: 0.5rem 1rem;
+    /* background-color: #f1f1f1; */
+    /* Light background color */
+    border-radius: 5px;
+    /* Rounded corners */
+    text-align: center;
+    /* Center text */
+    display: inline-block;
+    color: white;
+    /* Makes the div fit its content */
+    transition: background-color 0.3s ease;
+    /* Smooth background color transition */
 }
 
 .navbar-item:hover {

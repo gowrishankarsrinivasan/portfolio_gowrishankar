@@ -7,6 +7,7 @@ import movie from "../Images/project-img/movie.png";
 import saloon from "../Images/project-img/saloon.png";
 import todo from "../Images/project-img/todo.png";
 import supermarket from "../Images/project-img/super.png";
+import "aos/dist/aos.css";
 const projects = [
   {
     title: "To-Do Application",
@@ -58,7 +59,7 @@ const projects = [
   },
 ];
 
-function App() {
+const Project = React.forwardRef((props, ref) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
@@ -72,9 +73,9 @@ function App() {
   };
 
   return (
-    <div className="project-container">
-    <h1>Projects</h1>
-      <div className="carousel-container">
+    <div className="project-container" ref={ref}>
+      <h1>Projects</h1>
+      <div className="carousel-container" data-aos="zoom-in">
         <button className="arrow left-arrow" onClick={prevSlide}>
           <FaArrowLeft />
         </button>
@@ -104,6 +105,6 @@ function App() {
       </div>
     </div>
   );
-}
+});
 
-export default App;
+export default Project;

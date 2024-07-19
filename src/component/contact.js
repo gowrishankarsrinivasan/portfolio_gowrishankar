@@ -2,15 +2,15 @@ import React from "react";
 import "../CssComponent/contact.css";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 
-const Contact = () => {
+const Contact = React.forwardRef((props, ref) => {
   return (
-    <div className="contact-container">
+    <div className="contact-container" ref={ref}>
       <h1 className="contact-title">CONTACT</h1>
-      <div className="contact-cards">
+      <div className="contact-cards" data-aos="zoom-in">
         <div className="contact-card">
           <a
-          href="https://github.com/gowrishankarsrinivasan"
-          target="_blank"
+            href="https://github.com/gowrishankarsrinivasan"
+            target="_blank"
             rel="noopener noreferrer"
             className="contact-link"
           >
@@ -23,7 +23,7 @@ const Contact = () => {
         </div>
         <div className="contact-card">
           <a
-          href="https://www.linkedin.com/in/gowri-shankar-s-b3b45b27b/"
+            href="https://www.linkedin.com/in/gowri-shankar-s-b3b45b27b/"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-link"
@@ -36,8 +36,8 @@ const Contact = () => {
 
         <div className="contact-card">
           <a
-          href="https://www.linkedin.com/in/gowri-shankar-s-b3b45b27b/"
-          target="_blank"
+            href="https://www.linkedin.com/in/gowri-shankar-s-b3b45b27b/"
+            target="_blank"
             rel="noopener noreferrer"
             className="contact-link"
           >
@@ -61,6 +61,6 @@ const Contact = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Contact;

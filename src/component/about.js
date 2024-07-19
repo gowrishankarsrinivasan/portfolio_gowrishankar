@@ -2,14 +2,14 @@
 import React from "react";
 import "../CssComponent/about.css"; // Import the CSS file
 import img from "../Images/myimg.png";
-const About = () => {
+const About = React.forwardRef((props, ref) => {
   const handleDownload = () => {
     window.open(
       "https://drive.google.com/file/d/11sqF78adatjeDjoGxseu9VnUSwycDUsD/view?usp=sharing"
     );
   };
   return (
-    <div className="myprofile-container">
+    <div className="myprofile-container" ref={ref}>
       <h1>About me</h1>
       <div className="myprofile-header">
         <img
@@ -19,14 +19,13 @@ const About = () => {
         />
         <div className="myprofile-intro">
           <p>
-            I'm a passionate Full Stack Web Developer specializing in the MERN
-            stack, HTML, CSS, JavaScript, React, Node.js, Java, Spring Boot,
-            SQL, PostgreSQL, and MongoDB. With a keen eye for detail and a drive
-            for excellence, I craft dynamic and user-centric web applications.
-            My dedication to continuous learning and problem-solving ensures
-            efficient and effective project delivery. Let's collaborate to bring
-            your ideas to life and create impactful digital experiences
-            together.
+            👋Hello,I am Gowri shankar,a dedicated Computer Science Engineering
+            student currently pursuing my Bachelor degree in Sri Krishna College
+            of Engineering and Technology🎓. Passionate about creating visually
+            appealing and user-friendly web experiences, I aspire to kickstart
+            my career as a front-end developer. 💻. I'm eager to apply my skills
+            and knowledge as a trainee in a forward-thinking company where I can
+            contribute to exciting projects and grow as a developer.
           </p>
         </div>
       </div>
@@ -62,6 +61,6 @@ const About = () => {
       </button>
     </div>
   );
-};
+});
 
 export default About;

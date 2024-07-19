@@ -1,12 +1,18 @@
 .home {
   display: flex;
   justify-content: flex-start;
-  color: orangered;
+  color: red;
   align-items: center;
-  min-height: 90vh;  /* Use min-height instead of height */
+  min-height: 90vh;
   text-align: center;
   background: black;
   overflow: hidden;
+  --star-color: white; /* Custom property for star color */
+  --star-tail-length: 6em; /* Custom property for star tail length */
+  --star-tail-height: 2px; /* Custom property for star tail height */
+  --star-width: calc(var(--star-tail-length) / 6); /* Custom property for star width */
+  --fall-duration: 9s; /* Custom property for star fall duration */
+  --tail-fade-duration: var(--fall-duration); /* Custom property for tail fade duration */
 }
 
 .home .intro {
@@ -162,15 +168,6 @@
   50% {
     opacity: 0.6;
   }
-}
-/* Custom properties for star animation */
-:root {
-  --star-color: white; /* Star color to white */
-  --star-tail-length: 10em; /* Increase tail length */
-  --star-tail-height: 4px; /* Increase tail height */
-  --star-width: calc(var(--star-tail-length) / 4); /* Adjust star width accordingly */
-  --fall-duration: 9s;
-  --tail-fade-duration: var(--fall-duration);
 }
 
 .home .star {
